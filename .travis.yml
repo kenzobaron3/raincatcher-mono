@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '4.4'
+sudo: false
+before_install:
+- npm install -g npm@2.13.5
+- npm install -g grunt-cli
+install: npm install
+services:
+- docker
+script:
+- npm run bootstrap
+- npm start
+- npm test
+notifications:
+  email: false
+  slack:
+    on_success: change
+    on_failure: always
+    on_pull_requests: false
+    rooms:
+      secure: dyx1AOu9KCH35qtYek36XdMu+xQH99B3DeD+Z7C3n5lYN1FGe7rmOqR6pr5yvuBzJZ1Q1JWoelVNbLYGLcGSKmjMvmAzpAUF4bHUNixUYQx3e5BFYQFAoeaIG4Ksosi7EOIIt7f8MC0/UmXMarSyz8YP4kK39RbVRRDbGtfyTE/Tw7mJ8xpgp4crmViKnbt3QY1gosppDQnlBYQGeSmQd9zpmxo+QSU0vH+9Cpwk5nR8PjSzJK0X/HBWum865NK2cNRHwgTlxBVq5S+P0dseT9zHmEXtWLJSgEFLmo27PFQYb9x9Y5yi/pQtKuOSw4JwluFoSR9LlCon2qTK+ULyONQqaBWUtrUAPgxc+2S4hebelFzFGFWTpNoC5v+oN46yAuIazVl+4NKGfKWBni8CS2W1IVizFxnFGhg6GKgzPeyvQWokyAO5J3pnlBWr5melJWsfxwAP4iMSF7oNF8obXuvlZtF/ZHiYCOIXtb8eKjJePI3o6B7nPgQ/OD2hqjdHzjE+Q0LoqytphPQWLTwjsBOs8kHXWdxMdXgSCnqdNVj70V0+7AnHG1AOKjcbVfhcL4nD9KH4WKg9mMF1aykouHEawlpv6P0QQoi5YOGkABWR1basE3qxlqhStRcu6iWGUrAV1JGlt6bKwdln2uFZppKCmQbWZSTXHANJXCD5qc0=
